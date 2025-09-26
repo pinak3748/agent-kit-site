@@ -1,103 +1,170 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  fadeIn,
+  fadeInUp,
+  formReveal,
+  imageReveal,
+  staggerContainer,
+} from "@/lib/animations";
+import Navbar from "../components/navbar";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const companyLogos = [
+    {
+      name: "Nike",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png",
+      text: "Test",
+    },
+    {
+      name: "Addidas",
+      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png",
+      text: "Test",
+    },
+    {
+      name: "Apple",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0dJv4E8VraHN5HDwmsBT-E9NpIrdJDMVykw&s",
+      text: "Test",
+    },
+    {
+      name: "Uber",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png",
+      text: "Test",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Email submitted:", email);
+  };
+
+  return (
+    <div className="min-h-screen bg-background py-4 relative">
+      <Navbar />
+
+      <motion.div
+        className="font-sans flex flex-col min-h-screen"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+      >
+        <main className="w-full mt-4 md:mt-8 lg:mt-10 relative">
+          <div className="absolute inset-0 bg-gradient-radial from-blue-200/30 via-purple-100/20 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-36 bg-gradient-to-t from-chart-1/10 blur-sm via-chart-2/10 to-transparent"></div>
+          <motion.div variants={imageReveal}>
+            <AspectRatio ratio={16 / 5} className="overflow-hidden">
+              <Image
+                src="https://res.cloudinary.com/dapwdht9e/image/upload/v1758907770/image_zrq3fm.png"
+                alt="AI automation landscape featuring classical garden with marble statue, ancient columns, and lush vegetation"
+                className="w-full h-full object-cover object-center px-2"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </AspectRatio>
+          </motion.div>
+
+          <div className="bg-muted/30 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <motion.div
+                  className="space-y-6 lg:space-y-8"
+                  variants={fadeInUp}
+                >
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary leading-tight">
+                    Say it once, watch AI agents do it{" "}
+                    <span className="text-muted-foreground italic font-normal">
+                      forever
+                    </span>
+                  </h1>
+
+                  {/* Company Logos Section */}
+                  <motion.div
+                    className="space-y-3 lg:space-y-4"
+                    variants={fadeIn}
+                  >
+                    <p className="text-xs sm:text-sm text-muted-foreground font-medium">
+                      Used at global enterprises such as
+                    </p>
+                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-8">
+                      {companyLogos.map((company, index) => (
+                        <motion.div
+                          key={company.name}
+                          className="flex items-center justify-center"
+                          aria-label={`${company.name} company logo`}
+                          variants={fadeIn}
+                          custom={index}
+                        >
+                          <Image
+                            src={company.logo}
+                            alt={`${company.name} logo`}
+                            className="h-6 sm:h-8 w-auto object-contain opacity-70 filter bg-transparent hover:opacity-100 transition-opacity duration-200"
+                            loading="lazy"
+                          />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </motion.div>
+
+                <motion.div
+                  className="space-y-4 sm:space-y-6"
+                  variants={fadeInUp}
+                >
+                  {/* Description */}
+                  <motion.p
+                    className="text-base sm:text-lg lg:text-xl text-foreground leading-relaxed"
+                    variants={fadeIn}
+                  >
+                    Automate sales, meetings, operations, support, and admin
+                    tasks without writing a line of code.
+                  </motion.p>
+
+                  {/* Email Signup Form */}
+                  <motion.form
+                    onSubmit={handleSubmit}
+                    className="space-y-3 sm:space-y-4"
+                    variants={formReveal}
+                  >
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                      <Input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="flex-1 bg-background border-border text-foreground placeholder:text-muted-foreground h-10 sm:h-11"
+                        required
+                        aria-label="Email address for free trial"
+                      />
+                      <Button
+                        type="submit"
+                        className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 whitespace-nowrap h-10 sm:h-11 text-sm sm:text-base"
+                        aria-label="Start free trial"
+                      >
+                        Try for free
+                      </Button>
+                    </div>
+                  </motion.form>
+
+                  <motion.p
+                    className="text-xs sm:text-sm text-muted-foreground"
+                    variants={fadeIn}
+                  >
+                    No credit card required • Start automating in minutes
+                  </motion.p>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </motion.div>
     </div>
   );
 }

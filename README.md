@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agent Kit Site
 
-## Getting Started
+A modern, production-ready Next.js landing page template designed specifically for AI automation platforms and agent-based services. Built with performance and user experience in mind.
 
-First, run the development server:
+## ✨ Features
+
+- **Modern Design**: Clean, professional layout with smooth animations
+- **AI-Focused**: Tailored for automation platforms and agent services
+- **Responsive**: Mobile-first design that works on all devices
+- **Performance**: Optimized with Next.js 15, Turbopack, and modern React
+- **Accessible**: Built with accessibility best practices
+- **Enterprise Ready**: Includes company logos, testimonials, and CTA sections
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **UI Components**: Radix UI primitives
+- **Icons**: Lucide React
+- **Linting**: Biome
+- **TypeScript**: Full type safety
+
+## 🚀 Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 What's Included
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Responsive navigation bar
+- Hero section with animated background
+- Company logos showcase
+- Email signup form
+- Smooth page transitions
+- Modern UI components
+- Production-ready configuration
 
-## Learn More
+## 🎯 Perfect For
 
-To learn more about Next.js, take a look at the following resources:
+- AI startups and automation platforms
+- Agent-based service providers
+- SaaS companies in the AI space
+- Developers looking for a modern landing page template
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Available Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run Biome linter
+- `npm run lint:fix` - Fix linting issues
+- `npm run format` - Format code
+- `npm run format:check` - Check code formatting
 
-## Deploy on Vercel
+## 🎨 Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The template is designed to be easily customizable:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Colors**: Update the color scheme in `app/globals.css`
+2. **Content**: Modify the hero text and company logos in `app/page.tsx`
+3. **Animations**: Adjust animation variants in `lib/animations.ts`
+4. **Components**: Customize UI components in the `components/` directory
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built with ❤️ for the AI automation community
