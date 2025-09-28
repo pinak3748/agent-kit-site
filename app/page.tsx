@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { BentoSection } from "@/components/bentoSection/BentoSection";
+import ComplianceSection from "@/components/custom/ComplianceSection";
+import { PricingSection } from "@/components/custom/PricingSection";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,24 +21,24 @@ import Navbar from "../components/navbar";
 export default function Home() {
   const companyLogos = [
     {
-      name: "Nike",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png",
-      text: "Test",
-    },
-    {
-      name: "Addidas",
-      logo: "https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png",
-      text: "Test",
-    },
-    {
       name: "Apple",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0dJv4E8VraHN5HDwmsBT-E9NpIrdJDMVykw&s",
-      text: "Test",
+      logo: "/apple.svg",
+      text: "Apple",
     },
     {
-      name: "Uber",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png",
-      text: "Test",
+      name: "BMW",
+      logo: "/bmw.svg",
+      text: "BMW",
+    },
+    {
+      name: "Coco Cola",
+      logo: "/coca-cola.svg",
+      text: "Coco Cola",
+    },
+    {
+      name: "Microsoft",
+      logo: "/microsoft.svg",
+      text: "Mircrosoft",
     },
   ];
 
@@ -47,11 +50,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background py-4 relative">
+    <div className="min-h-screen bg-background py-4">
       <Navbar />
 
       <motion.div
-        className="font-sans flex flex-col min-h-screen"
+        className="font-sans flex flex-col min-h-[70vh]"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -62,10 +65,12 @@ export default function Home() {
           <motion.div variants={imageReveal}>
             <AspectRatio ratio={16 / 5} className="overflow-hidden">
               <Image
-                src="https://res.cloudinary.com/dapwdht9e/image/upload/v1758907770/image_zrq3fm.png"
+                src="/hero.jpg"
                 alt="AI automation landscape featuring classical garden with marble statue, ancient columns, and lush vegetation"
                 className="w-full h-full object-cover object-center px-2"
                 loading="eager"
+                width={1600}
+                height={500}
                 fetchPriority="high"
               />
             </AspectRatio>
@@ -84,8 +89,6 @@ export default function Home() {
                       forever
                     </span>
                   </h1>
-
-                  {/* Company Logos Section */}
                   <motion.div
                     className="space-y-3 lg:space-y-4"
                     variants={fadeIn}
@@ -105,8 +108,12 @@ export default function Home() {
                           <Image
                             src={company.logo}
                             alt={`${company.name} logo`}
-                            className="h-6 sm:h-8 w-auto object-contain opacity-70 filter bg-transparent hover:opacity-100 transition-opacity duration-200"
+                            className="h-4 sm:h-6 w-auto object-contain opacity-70 filter bg-transparent hover:opacity-100 transition-opacity duration-200"
                             loading="lazy"
+                            width={100}
+                            height={16}
+                            sizes="(max-width: 640px) 64px, 80px"
+                            priority={false}
                           />
                         </motion.div>
                       ))}
@@ -165,6 +172,12 @@ export default function Home() {
           </div>
         </main>
       </motion.div>
+
+      <BentoSection />
+
+      <ComplianceSection />
+
+      <PricingSection />
     </div>
   );
 }

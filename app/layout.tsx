@@ -43,13 +43,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "font-sans antialiased",
+          "font-sans antialiased relative",
           geistSans.variable,
           geistMono.variable,
         )}
       >
-        <div className="max-w-[85vw] mx-auto border-x-[1px] border-primary/10">
-          {children}
+        <div className="grid grid-cols-12 mx-auto border-x-[1px] border-primary/10 relative">
+          <div className=" h-full col-span-1 w-full text-primary/5 bg-[size:10px_10px] [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)]"></div>
+          <div className="col-span-10 border-x-[1px]">{children}</div>
+          <div className="h-full w-full col-span-1 text-primary/5 bg-[size:10px_10px] [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)]"></div>
         </div>
       </body>
     </html>

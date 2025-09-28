@@ -41,13 +41,12 @@ function Navbar() {
             >
               Customers
             </a>
-            <div className="relative group">
-              <Button className="flex items-center space-x-1 text-sm text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-200 font-medium">
-                <span>Use Cases</span>
-                <ChevronDown className="w-4 h-4" />
-              </Button>
-              {/* Dropdown would go here */}
-            </div>
+            <a
+              href="/"
+              className="text-sm text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-200 font-medium"
+            >
+              Use Case
+            </a>
             <a
               href="/"
               className="text-sm text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-200 font-medium"
