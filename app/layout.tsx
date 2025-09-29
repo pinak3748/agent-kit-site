@@ -49,9 +49,11 @@ export default function RootLayout({
         )}
       >
         <div className="grid grid-cols-12 mx-auto border-x-[1px] border-primary/10 relative">
-          <div className=" h-full col-span-1 w-full text-primary/5 bg-[size:10px_10px] [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)]"></div>
-          <div className="col-span-10 border-x-[1px]">{children}</div>
-          <div className="h-full w-full col-span-1 text-primary/5 bg-[size:10px_10px] [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)]"></div>
+          <div className="hidden md:block h-full col-span-1 w-full text-primary/5 bg-[size:10px_10px] [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)]"></div>
+          <div className="col-span-12 md:col-span-10 border-x-[1px]">
+            {children}
+          </div>
+          <div className="hidden md:block h-full w-full col-span-1 text-primary/5 bg-[size:10px_10px] [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)]"></div>
         </div>
       </body>
     </html>

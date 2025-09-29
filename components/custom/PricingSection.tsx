@@ -87,9 +87,9 @@ export function PricingSection() {
       aria-labelledby="pricing-section-title"
     >
       <CustomSeperator />
-      <div className="max-w-container mx-auto flex flex-col items-center gap-6 px-12 py-10 md:py-24">
+      <div className="max-w-container mx-auto flex flex-col items-center gap-6 px-8 py-10 md:py-24">
         <motion.div
-          className="flex flex-col items-center gap-4 text-center"
+          className="flex flex-col items-center gap-4 md:text-center"
           variants={bentoHeader}
           initial="hidden"
           whileInView="visible"
@@ -107,7 +107,7 @@ export function PricingSection() {
         </motion.div>
 
         <motion.p
-          className="text-md text-muted-foreground max-w-[840px] text-center font-medium text-balance"
+          className="text-base text-muted-foreground max-w-[840px] md:text-center text-balance"
           variants={bentoDescription}
           initial="hidden"
           whileInView="visible"

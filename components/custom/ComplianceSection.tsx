@@ -12,7 +12,7 @@ const ComplianceSection = () => {
       aria-labelledby="compliance-section-title"
     >
       <CustomSeperator />
-      <div className="max-w-container mx-auto flex flex-col items-center gap-6 px-12 py-10 md:py-16 lg:py-40">
+      <div className="max-w-container mx-auto flex flex-col items-center gap-6 px-8 py-10 md:py-16 lg:py-40">
         <div className="grid gap-9 lg:grid-cols-2 w-full">
           <div className="flex flex-col gap-5">
             <motion.div
@@ -45,7 +45,7 @@ const ComplianceSection = () => {
             </motion.h2>
 
             <motion.p
-              className="text-md text-muted-foreground font-medium text-balance"
+              className="text-base text-muted-foreground text-balance"
               variants={bentoDescription}
               initial="hidden"
               whileInView="visible"

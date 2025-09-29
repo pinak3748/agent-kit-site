@@ -49,10 +49,6 @@ export function TerminalDemo() {
         <TypingAnimation className="text-muted-foreground text-wrap !px-2.5">
           Success! AI agent is now handling support.
         </TypingAnimation>
-
-        <TypingAnimation className="text-muted-foreground text-wrap !px-2.5">
-          Monitoring performance and learning.
-        </TypingAnimation>
       </Terminal>
     </motion.div>
   );

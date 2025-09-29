@@ -26,7 +26,7 @@ export interface BentoGridProps {
 export function BentoGrid({ className }: BentoGridProps) {
   return (
     <div
-      className={`grid grid-cols-12 gap-4 items-stretch w-full px-4 md:px-6 max-w-7xl mt-6 sm:mt-10 md:mt-10 ${
+      className={`grid grid-cols-12 gap-4 items-stretch w-full px-1 md:px-6 max-w-7xl mt-6 sm:mt-10 md:mt-10 ${
         className || ""
       }`}
     >
